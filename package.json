@@ -6,6 +6,9 @@
     "type": "module",
     "author": "Ian Oliveira <ian.oliv@outlook.com>",
     "license": "MIT",
+    "engines": {
+        "node": "12.13.0"
+    },
     "scripts": {
         "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
         "prestart": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
