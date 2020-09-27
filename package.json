@@ -11,7 +11,6 @@
     },
     "scripts": {
         "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
-        "prestart": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
         "start": "node dist/index.js",
         "dev": "DEBUG=exposeme:* ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
         "dev:cli": "DEBUG=exposeme@* ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/testes/index.ts",
