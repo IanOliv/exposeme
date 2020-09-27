@@ -1,6 +1,6 @@
 import { Singleton } from "@decorators/index";
 import { iDispatcher } from "@types";
-import {dispatch  } from "./../store/dispatcher";
+
 
 
 export class Dispatcher implements iDispatcher{
