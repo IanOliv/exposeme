@@ -11,7 +11,7 @@ export default interface iApp {
 
 }
 
-export interface iRequest implements IncomingMessage {
+export interface iRequest{
     headers:{host:string}
     url:string
     [name:string]:any
