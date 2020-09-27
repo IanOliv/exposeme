@@ -3,12 +3,12 @@
  *
  */
 (async()=>{
-
+    const {PORT}= process.env
     try {
         const server = await import('./server')
         server
         .default()
-        .listen(8080,()=>{
+        .listen(PORT||8080,()=>{
             console.log('Server is running')
         })
     } catch (error) {
