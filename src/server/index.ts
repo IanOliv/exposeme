@@ -33,6 +33,8 @@ class Server  implements iServer {
             res.end('Host header is required')
             return
         }
+        log(hostname)
+        log(url)
         let clientId = Server.GetClientIdFromHostname(hostname,url)
        log(clientId)
 
@@ -94,9 +96,9 @@ class Server  implements iServer {
     }
     static getClientId(url:string){
         const fakeUrl  = new URL(`http://fake${url}`)
+        // log(fakeUrl)
 
-
-        return fakeUrl.searchParams.get('clientId')
+        return fakeUrl.searchParams.get('client-id')
     }
     static getConnection(req:iRequest):Client{
         let pos = Server.getClientId(req.url)
