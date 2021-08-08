@@ -3,7 +3,7 @@ import {createServer} from "http"
 import { Server } from 'socket.io'
 import { Socket } from "socket.io-client";
 const {PORT}=process.env
-class ServerExpose {
+export default class ServerExpose {
     app: any;
     cons:any;
     httpServer: import("http").Server;
@@ -61,9 +61,9 @@ class ServerExpose {
 }
 
 
-new ServerExpose()
-    .httpServer
-    .listen(PORT||8080,()=>{
-    console.log('Server is running')
-    console.log(`on the port ${PORT||8080}`)
-})
+// new ServerExpose()
+//     .httpServer
+//     .listen(PORT||8080,()=>{
+//     console.log('Server is running')
+//     console.log(`on the port ${PORT||8080}`)
+// })
