@@ -42,15 +42,19 @@ export default class ServerExpose {
             console.log('---------------------------')
             let newUrl= url.replace(`/${id}`,'')
 
-            const json =JSON.stringify({url:newUrl,headers,body})
-            if(!!cons[id]){
-                cons[id].emit('data',json,(err,data)=>{
-                console.log(err)
-                console.log(data)
-                res.send(data||'ssss')
-            })
-            }else{
-                res.send('sszzzzzss')
+            try {
+                const json =JSON.stringify({url:newUrl,headers,body})
+                if(!!cons[id]){
+                    cons[id].emit('data',json,(err,data)=>{
+                    console.log(err)
+                    console.log(data)
+                    res.send(data||'ssss')
+                })
+                }else{
+                    res.send('sszzzzzss')
+                }
+            } catch (error) {
+                 res.send(error)
             }
         })
     }
